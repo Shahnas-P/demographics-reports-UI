@@ -1,11 +1,64 @@
-import React from 'react'
+import { useState } from 'react';
+import { AlignJustify, ChevronDown, Search , Settings2  } from 'lucide-react';
+import Button from './Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleSideBar } from '../utils/slice';
 
 const Navbar = () => {
-  return (
-    <div className='relative'>
-      Navbar
-    </div>
-  )
-}
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dispatch = useDispatch()
 
-export default Navbar
+  const handleToggleSidebar = () =>{
+    dispatch(toggleSideBar())
+
+  }
+
+  
+  return (
+    <div className=' mt-3 m-2 ml-3 flex flex-1 flex-row items-center sm:ml-10 md:ml-15'>
+      {/* Menu Icon - Visible on Small Screens */}
+      <AlignJustify onClick={handleToggleSidebar} size={30} className="text-slate-600 flex sm:hidden " />
+
+      {/* Title */}
+      <h1 className='mx-5 text-xl font-bold ml-8 lg:text-3xl '>Demographics Report</h1>
+
+      {/* Right-side Icons */}
+      <ul className='flex flex-1 justify-end bg-slate-100 sm:bg-white sm:border-0  rounded-full pr-2  border border-slate-300  items-center relative'>
+        {/* Search Icon with Dropdown for Small Screens */}
+        <li className="relative ">
+          <button
+            className="text-slate-600 md:hidden m sm:hidden flex"
+            onClick={() => setShowDropdown(!showDropdown)}
+            onBlur={() => setTimeout(() => setShowDropdown(false), 200)} // Close when clicking outside
+          >
+            <ChevronDown size={25}  />
+          </button>
+
+          {/* Dropdown Menu */}
+          {showDropdown && (
+            <div className="absolute top-8 right-0 bg-white border border-gray-300 shadow-md rounded-md w-40 p-2 max-w-[400px]">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full p-1 border border-gray-400 rounded-md mb-2"
+              />
+            <Button text={"Cutomize"} style={"w-full mb-2"} icon={<Settings2 size={15} />  } iconSize={25}  />
+            
+              <Button text={"Add New"} style={"w-full mb-2"} textSize={'text-md'} />
+              {/* <Button className="w-full mb-2">Button 1</Button>
+              <Button className="w-full">Button 2</Button> */}
+            </div>
+          )}
+        </li>
+
+        {/* Other Buttons (Visible on Larger Screens) */}
+        <Search className='hidden sm:block' size={20}/>
+        {/* <li className='hidden sm:block '  ><Search /></li> */}
+        <li className='hidden sm:block mx-3'><Button text={"Cutomize"} icon={<Settings2 size={15} />  } iconSize={25}  /></li>
+        <li className='hidden sm:block'><Button text={"Add New"} textSize={'text-md'} /></li>
+      </ul>
+    </div>
+  );
+};
+
+export default Navbar;
