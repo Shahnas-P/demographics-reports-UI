@@ -67,9 +67,15 @@ const TargetHead = () => {
           </>
         ) : (
       
-          <div className="flex py-1">
+          <div className="flex py-1 gap-2">
+            <div className="border border-slate-300 p-1 rounded-full">
             <Calendar className="text-slate-600" size={20} />
-            <Settings className="mx-2 text-slate-600" size={20} />
+
+              </div>
+              <div className="border border-slate-300 p-1 rounded-full">
+
+            <Settings className=" text-slate-600" size={20} />
+            </div>
             <Button
               text={"Add User"}
               icon={<Plus size={14} />}
