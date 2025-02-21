@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { AlignJustify, ChevronDown, Search , Settings2  } from 'lucide-react';
+import { AlignJustify, ChevronDown, Search , Settings2 ,CloudUpload  } from 'lucide-react';
 import Button from './Button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toggleSideBar } from '../utils/slice';
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   
   return (
-    <div className=' mt-3 m-2 ml-3 flex flex-1 flex-row items-center sm:ml-10 md:ml-15'>
+    <div className=' mt-3 m-2 ml-3 flex flex-1 flex-row items-center sm:ml-10 md:ml-15 pb-5 border-b-2 border-slate-200 sticky top-0 bg-white '>
       {/* Menu Icon - Visible on Small Screens */}
       <AlignJustify onClick={handleToggleSidebar} size={30} className="text-slate-600 flex sm:hidden " />
 
@@ -44,7 +44,7 @@ const Navbar = () => {
               />
             <Button text={"Cutomize"} style={"w-full mb-2"} icon={<Settings2 size={15} />  } iconSize={25}  />
             
-              <Button text={"Add New"} style={"w-full mb-2"} textSize={'text-md'} />
+              <Button text={"Add New"} icon={<CloudUpload />} iconSize={25} size={15} style={"w-full mb-2"} textSize={'text-md'} />
               {/* <Button className="w-full mb-2">Button 1</Button>
               <Button className="w-full">Button 2</Button> */}
             </div>
@@ -54,8 +54,8 @@ const Navbar = () => {
         {/* Other Buttons (Visible on Larger Screens) */}
         <Search className='hidden sm:block' size={20}/>
         {/* <li className='hidden sm:block '  ><Search /></li> */}
-        <li className='hidden sm:block mx-3'><Button text={"Cutomize"} icon={<Settings2 size={15} />  } iconSize={25}  /></li>
-        <li className='hidden sm:block'><Button text={"Add New"} textSize={'text-md'} /></li>
+        <li className='hidden sm:block mx-3'><Button text={"Cutomize"} icon={<Settings2 size={15} />  } iconSize={25}  style={'px-2 py-1 '} /></li>
+        <li className='hidden sm:block'><Button text={"Add New"} icon={<CloudUpload />} size={15} textSize={'text-md'} iconSize={25}  style={'px-2 py-1 '}  /></li>
       </ul>
     </div>
   );

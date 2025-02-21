@@ -16,7 +16,7 @@ dispatch(closeSideBar())
 
    
     
-      <div className={`absolute top-11  max-h-[39rem] h-full m-2 flex flex-1 flex-col justify-between bg-slate-50 rounded-xl transition-all duration-300  `}>
+      <div className={`absolute top-11  max-h-[35rem]   sm:max-h-[39rem]  h-full m-2 flex flex-1 flex-col justify-between bg-slate-50 rounded-xl transition-all duration-300 fixed  `}>
         <div className=' h-[50%] flex  flex-col justify-between p-2 items-center '>
 
           <img   onClick={window.innerWidth < 600 ? handleCloseSidebar : null}   width={25} src='./logo.jpeg' />
