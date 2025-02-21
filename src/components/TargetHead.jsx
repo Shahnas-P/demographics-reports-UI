@@ -60,7 +60,7 @@ const TargetHead = () => {
                 <Button
                   text={"Add User"}
                   icon={<Plus size={14} />}
-                  style={"bg-blue-400 text-white text-sm font-semibold mt-2"}
+                  style={"bg-blue-800 text-white text-xs font-semibold mt-2"}
                 />
               </div>
             </div>
@@ -74,7 +74,7 @@ const TargetHead = () => {
               text={"Add User"}
               icon={<Plus size={14} />}
               style={
-                "bg-blue-400 text-white sm:text-sm font-semibold whitespace-nowrap"
+                "bg-blue-800 text-white sm:text-xs font-semibold whitespace-nowrap"
               }
             />
           </div>

@@ -9,14 +9,17 @@ const slice = createSlice({
     },
     reducers:{
         toggleSideBar:(state,action)=>{
-            state.openSideBar = ! state.openSideBar
+            state.openSideBar = !state.openSideBar
         },
 
         closeSideBar :(state,action)=>{
             state.openSideBar = false
+        },
+        openSideBarAction :(state,action)=>{
+            state.openSideBar = true
         }
     }
 })
 
-export const {toggleSideBar,closeSideBar} = slice.actions
+export const {toggleSideBar,closeSideBar ,openSideBarAction} = slice.actions
 export default slice.reducer;
