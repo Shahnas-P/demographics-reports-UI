@@ -11,7 +11,7 @@ const TargetHead = () => {
       setIsSmallScreen(window.innerWidth <= 400);
     };
 
-    checkScreenSize(); 
+    checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
     return () => window.removeEventListener("resize", checkScreenSize);
@@ -26,8 +26,8 @@ const TargetHead = () => {
         </h3>
         <Button
           text={"Beta"}
-          style={"text-blue-700 text-sm font-semibold sm:h-5"}
-          icon={<Dot />}
+          style={"text-blue-700 text-xs font-semibold "}
+          icon={<Dot size={10} />}
         />
       </div>
 
@@ -44,16 +44,16 @@ const TargetHead = () => {
 
             {/* Dropdown Content */}
             <div
-              className={`absolute right-0 top-full mt-2 w-40 bg-white shadow-lg rounded-md p-2 ${
+              className={`absolute right-0 top-full mt-2 w-40 bg-white border border-gray-300 shadow-md z-40 rounded-md p-2 ${
                 menuOpen ? "block" : "hidden"
               }`}
             >
               <div className="flex flex-col">
-                <button className="flex items-center gap-2 py-1 text-slate-600">
+                <button className="flex items-center gap-2 py-1 text-slate-600 font-semibold border-b border-slate-400">
                   <Calendar size={20} />
                   Calendar
                 </button>
-                <button className="flex items-center gap-2 py-1 text-slate-600">
+                <button className="flex items-center gap-2 py-1 text-slate-600 font-semibold border-b border-slate-400">
                   <Settings size={20} />
                   Settings
                 </button>
@@ -66,21 +66,18 @@ const TargetHead = () => {
             </div>
           </>
         ) : (
-      
           <div className="flex py-1 gap-2">
-            <div className="border border-slate-300 p-1 rounded-full">
-            <Calendar className="text-slate-600" size={20} />
-
-              </div>
-              <div className="border border-slate-300 p-1 rounded-full">
-
-            <Settings className=" text-slate-600" size={20} />
+            <div className="border border-slate-300 p-2  rounded-full">
+              <Calendar className="text-slate-600 " size={20} />
+            </div>
+            <div className="border border-slate-300 p-2 rounded-full">
+              <Settings className=" text-slate-600" size={20} />
             </div>
             <Button
               text={"Add User"}
               icon={<Plus size={14} />}
               style={
-                "bg-blue-800 text-white sm:text-xs font-semibold whitespace-nowrap"
+                "bg-blue-800 text-white sm:text-xs font-semibold whitespace-nowrap p-2"
               }
             />
           </div>

@@ -1,6 +1,5 @@
 
 import { Provider } from 'react-redux'
-import './App.css'
 import  MainContainer from './components/MainContainer'
 import appStore from './utils/appStore'
 function App() {

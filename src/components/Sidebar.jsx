@@ -13,9 +13,6 @@ import { closeSideBar } from "../utils/slice";
 function Sidebar() {
   const dispatch = useDispatch();
   const sideBarOpen = useSelector((store) => store.dashboard.openSideBar);
-  
-
- 
 
   const handleCloseSidebar = () => {
     dispatch(closeSideBar());
@@ -32,19 +29,19 @@ function Sidebar() {
             width={25}
             src="./logo.jpeg"
           />
-          <div className=" p-2 rounded-full  bg-slate-200  ">
-            <House className="text-slate-600    " />
+          <div className=" p-2 rounded-full  bg-slate-200 }  ">
+            <House size={20} className="text-slate-600    " />
           </div>
-          <ChartNoAxesColumnIncreasing className="text-slate-600 " />
-          <UserRound className="text-slate-600 " />
-          <Calendar className="text-slate-600 " />
-          <Zap className="text-slate-600 " />
-          <BellRing className="text-slate-600 " />
+          <ChartNoAxesColumnIncreasing size={20} className="text-slate-600 " />
+          <UserRound size={20} className="text-slate-600 " />
+          <Calendar size={20} className="text-slate-600 " />
+          <Zap size={20} className="text-slate-600 " />
+          <BellRing size={20} className="text-slate-600 " />
         </div>
         <div className="flex flex-col   h-[13%] justify-evenly">
-          <Settings />
+          <Settings size={20} />
 
-          <img width={30} className="rounded-full" src="./profile.jpeg" />
+          <img width={25} className="rounded-full" src="./profile.jpeg" />
         </div>
       </div>
     )
